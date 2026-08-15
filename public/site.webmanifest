@@ -1,0 +1,13 @@
+{
+  "name": "Hamza Fida — Full-Stack Developer",
+  "short_name": "Hamza Fida",
+  "description": "Portfolio of Hamza Fida, a full-stack developer building production web and mobile apps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070a",
+  "theme_color": "#07070a",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-icon.svg", "sizes": "180x180", "type": "image/svg+xml" }
+  ]
+}

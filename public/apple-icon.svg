@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <rect width="180" height="180" rx="40" fill="#07070a"/>
+  <circle cx="90" cy="90" r="66" fill="none" stroke="#f5b429" stroke-opacity="0.4" stroke-width="5"/>
+  <text x="90" y="112" font-family="ui-monospace, monospace" font-size="66" font-weight="700" fill="#f5b429" text-anchor="middle">HF</text>
+</svg>
