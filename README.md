@@ -38,12 +38,12 @@ Graph preview, Twitter card, JSON-LD — picks it up automatically.
 
 Edit `src/lib/site.ts` — it is the single source of truth for content:
 
-| Field | What to check |
+| Field | Status |
 | --- | --- |
-| `url` | Set to the real production domain. Drives canonical URL, OG tags, sitemap and `robots.txt`. |
-| `links.github` | Currently `https://github.com/hamzafidapm`. |
-| `projects[].repo` | Placeholder repo URLs — point each at the real source repository. |
-| `twitter.creator` (in `src/app/layout.tsx`) | Update or remove if the handle differs. |
+| `url` | Set to `https://hamza.vercel.app`. Drives canonical URL, OG tags, sitemap and `robots.txt` — update if the deployed domain differs. |
+| `links.github` | `https://github.com/hamzafidapm`. |
+| `projects[].repo` | Verified against the live repos (`coachflow`, `Marinaheights`, `sablefire`, `Gym`). |
+| `twitter.creator` (in `src/app/layout.tsx`) | Set to `@vibewithhamzah` — update or remove if the handle differs. |
 
 ## Structure
 
