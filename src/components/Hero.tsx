@@ -122,8 +122,8 @@ export default function Hero() {
                 <Image
                   src={siteConfig.photo}
                   alt={siteConfig.photoAlt}
-                  width={520}
-                  height={693}
+                  width={600}
+                  height={800}
                   priority
                   sizes="(max-width: 640px) 55vw, (max-width: 1024px) 45vw, 420px"
                   className="h-auto w-[12.5rem] object-cover sm:w-[19rem] lg:w-[23rem]"
