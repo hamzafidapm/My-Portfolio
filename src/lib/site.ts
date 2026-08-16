@@ -94,7 +94,7 @@ export const projects: Project[] = [
     summary:
       'Gym booking app with real-time class scheduling and live availability updates.',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
-    live: 'https://ironhaus.vercel.app',
+    live: 'https://hzgym.vercel.app',
     repo: 'https://github.com/hamzafidapm/Gym',
     accentFrom: 'from-emerald-400/20',
     accentTo: 'to-gold-500/10',
