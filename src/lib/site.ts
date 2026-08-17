@@ -115,7 +115,7 @@ export const projects: Project[] = [
     summary:
       'Role-based business portal with authentication and permission-tiered dashboards.',
     tech: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
-    // TODO: add the deployed URL. Until then the card renders without a Live Demo button.
+    live: 'https://portaluae.vercel.app',
     repo: 'https://github.com/hamzafidapm/portal',
     demo: {
       email: 'admin@gulfnova.demo',
