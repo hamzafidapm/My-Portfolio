@@ -66,6 +66,24 @@ export function CodeIcon(props: IconProps) {
   );
 }
 
+export function KeyIcon(props: IconProps) {
+  return (
+    <svg
+      {...base}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="7.5" cy="15.5" r="4.5" />
+      <path d="m10.7 12.3 8.3-8.3M17 6l2.5 2.5M14.5 8.5 17 11" />
+    </svg>
+  );
+}
+
 export function ChevronDownIcon(props: IconProps) {
   return (
     <svg

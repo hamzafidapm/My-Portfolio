@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 
-import { ArrowUpRightIcon, CodeIcon } from '@/components/Icons';
+import { ArrowUpRightIcon, CodeIcon, KeyIcon } from '@/components/Icons';
 import { fadeUp } from '@/lib/motion';
-import type { Project } from '@/lib/site';
+import type { DemoAccess, Project } from '@/lib/site';
 
 type Props = {
   project: Project;
@@ -62,17 +62,21 @@ export default function ProjectCard({ project, index }: Props) {
           ))}
         </ul>
 
+        {project.demo && <DemoCredentials demo={project.demo} project={project.name} />}
+
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-7">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-gold-400 px-4 py-2.5 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-gold-300 hover:shadow-glow"
-          >
-            Live Demo
-            <ArrowUpRightIcon className="h-3.5 w-3.5" />
-            <span className="sr-only">— opens {project.name} in a new tab</span>
-          </a>
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-gold-400 px-4 py-2.5 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-gold-300 hover:shadow-glow"
+            >
+              Live Demo
+              <ArrowUpRightIcon className="h-3.5 w-3.5" />
+              <span className="sr-only">— opens {project.name} in a new tab</span>
+            </a>
+          )}
           <a
             href={project.repo}
             target="_blank"
@@ -88,5 +92,41 @@ export default function ProjectCard({ project, index }: Props) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+/**
+ * Highlighted panel advertising a project's public demo account, so visitors
+ * understand they can sign in and explore rather than only view screenshots.
+ * These credentials are intentionally public — keep them to seeded demo data.
+ */
+function DemoCredentials({ demo, project }: { demo: DemoAccess; project: string }) {
+  return (
+    <div className="mt-5 rounded-xl border border-gold-400/30 bg-gold-400/[0.07] p-4">
+      <p className="flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-gold-300">
+        <KeyIcon className="h-3.5 w-3.5" />
+        Demo Login
+      </p>
+
+      <dl className="mt-3 space-y-1.5">
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <dt className="text-xs text-zinc-500">Email</dt>
+          <dd className="select-all break-all font-mono text-[0.8rem] text-gold-100">
+            {demo.email}
+          </dd>
+        </div>
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <dt className="text-xs text-zinc-500">Password</dt>
+          <dd className="select-all break-all font-mono text-[0.8rem] text-gold-100">
+            {demo.password}
+          </dd>
+        </div>
+      </dl>
+
+      <p className="mt-3 text-xs leading-relaxed text-zinc-400">{demo.note}</p>
+      <span className="sr-only">
+        These are public demo credentials for {project}.
+      </span>
+    </div>
   );
 }

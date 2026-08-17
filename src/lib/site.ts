@@ -43,13 +43,22 @@ export const navItems: NavItem[] = [
   { id: 'contact', label: 'Contact' },
 ];
 
+/** Public demo credentials surfaced on a card so visitors can log in and explore. */
+export type DemoAccess = {
+  email: string;
+  password: string;
+  note: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
   summary: string;
   tech: string[];
-  live: string;
+  /** Omit while a project has no public deployment — the card hides its Live Demo button. */
+  live?: string;
   repo: string;
+  demo?: DemoAccess;
   accentFrom: string;
   accentTo: string;
 };
@@ -97,6 +106,23 @@ export const projects: Project[] = [
     live: 'https://hzgym.vercel.app',
     repo: 'https://github.com/hamzafidapm/Gym',
     accentFrom: 'from-emerald-400/20',
+    accentTo: 'to-gold-500/10',
+  },
+  {
+    slug: 'gulfnova-portal',
+    name: 'GulfNova Portal',
+    // TODO: confirm summary and tech — the portal repo has no code yet to infer from.
+    summary:
+      'Role-based business portal with authentication and permission-tiered dashboards.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
+    // TODO: add the deployed URL. Until then the card renders without a Live Demo button.
+    repo: 'https://github.com/hamzafidapm/portal',
+    demo: {
+      email: 'admin@gulfnova.demo',
+      password: 'GulfNova#2026',
+      note: 'Click any role on the login page’s quick-fill panel to try different permission levels.',
+    },
+    accentFrom: 'from-violet-400/20',
     accentTo: 'to-gold-500/10',
   },
 ];
