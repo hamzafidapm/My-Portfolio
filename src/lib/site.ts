@@ -111,10 +111,9 @@ export const projects: Project[] = [
   {
     slug: 'gulfnova-portal',
     name: 'GulfNova Portal',
-    // TODO: confirm summary and tech — the portal repo has no code yet to infer from.
     summary:
-      'Role-based business portal with authentication and permission-tiered dashboards.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
+      'Full-stack enterprise HR & operations platform with 7-tier role-based access control, 100+ seeded employees, and complete workflows for attendance, leave, payroll, and recruitment.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma', 'Neon Postgres'],
     live: 'https://portaluae.vercel.app',
     repo: 'https://github.com/hamzafidapm/portal',
     demo: {
