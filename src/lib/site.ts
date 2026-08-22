@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: 'I build production-ready web and mobile apps — AI-assisted, shipped fast.',
   description:
     'Hamza Fida — full-stack developer building production SaaS platforms, web apps, mobile apps and landing pages with Next.js, TypeScript, Tailwind CSS and Supabase.',
-  url: 'https://hamza.vercel.app',
+  url: 'https://vibewithhamza.vercel.app',
   photo: '/images/hamza.jpeg',
   photoAlt: 'Portrait of Hamza Fida, full-stack developer',
   locale: 'en_US',
