@@ -124,12 +124,33 @@ export const projects: Project[] = [
     accentFrom: 'from-violet-400/20',
     accentTo: 'to-gold-500/10',
   },
+  {
+    slug: 'noir-brew',
+    name: 'NOIR BREW',
+    summary:
+      'Cinematic dark-and-gold coffee brand site with a horizontal-scroll product showcase, full Menu, Story and Locations pages, and database-backed newsletter signup and table reservations. Profiling and fixing render-blocking animations took Lighthouse from 37 to 89.',
+    tech: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind',
+      'Framer Motion',
+      'GSAP',
+      'Lenis',
+      'Prisma',
+      'Neon Postgres',
+      'Vercel',
+    ],
+    live: 'https://coffeeweb-xi.vercel.app',
+    repo: 'https://github.com/hamzafidapm/coffeeweb',
+    accentFrom: 'from-stone-400/20',
+    accentTo: 'to-gold-500/10',
+  },
 ];
 
 export type Stat = { value: number; suffix: string; label: string };
 
 export const stats: Stat[] = [
-  { value: 4, suffix: '+', label: 'Projects Shipped' },
+  { value: 6, suffix: '+', label: 'Projects Shipped' },
   { value: 12, suffix: '+', label: 'Technologies' },
   { value: 100, suffix: '%', label: 'AI-Assisted Workflow' },
 ];

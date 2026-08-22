@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index }: Props) {
     <motion.article
       variants={fadeUp}
       aria-labelledby={headingId}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.015] hover:border-gold-400/35 hover:shadow-glow-lg sm:p-7"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.015] hover:border-gold-400/35 hover:shadow-glow-lg sm:p-7"
     >
       {/* Accent wash that warms up on hover */}
       <div
@@ -30,7 +30,7 @@ export default function ProjectCard({ project, index }: Props) {
         className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold-400/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
 
-      <div className="relative flex flex-1 flex-col">
+      <div className="relative flex flex-col">
         <div className="flex items-start justify-between gap-4">
           <span className="font-mono text-xs text-zinc-600">
             0{index + 1}
@@ -64,7 +64,7 @@ export default function ProjectCard({ project, index }: Props) {
 
         {project.demo && <DemoCredentials demo={project.demo} project={project.name} />}
 
-        <div className="mt-auto flex flex-wrap items-center gap-3 pt-7">
+        <div className="flex flex-wrap items-center gap-3 pt-7">
           {project.live && (
             <a
               href={project.live}

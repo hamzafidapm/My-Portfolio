@@ -19,7 +19,7 @@ export default function Projects() {
           id="projects-heading"
           eyebrow="03 — Featured Work"
           title="Projects I've shipped"
-          description="Four production applications — each live, each built end-to-end from database to deploy."
+          description="Six production applications — each live, each built end-to-end from database to deploy."
         />
 
         <motion.div
@@ -27,7 +27,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="mt-12 grid gap-5 sm:gap-6 lg:grid-cols-2"
+          className="mt-12 grid items-start gap-5 sm:gap-6 lg:grid-cols-2"
         >
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
