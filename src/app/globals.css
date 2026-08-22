@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --nav-offset: 5.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Keep sticky-nav-sized headroom when jumping to an anchor. */
+    scroll-padding-top: var(--nav-offset);
+  }
+
+  body {
+    @apply bg-ink-950 text-zinc-300 antialiased;
+    /* `clip` (not `hidden`) contains off-screen entrance offsets without
+       creating a scroll container that would break sticky/fixed children. */
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-gold-400/30 text-gold-50;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-400 ring-offset-2 ring-offset-ink-950;
+  }
+
+  /* Respect users who ask the OS for reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.28em] text-gold-400;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-white/[0.07] bg-white/[0.02] backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-br from-gold-200 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  /* Fine dotted grid used behind several sections. */
+  .bg-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+}
