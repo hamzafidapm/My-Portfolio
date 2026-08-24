@@ -19,7 +19,7 @@ export default function Projects() {
           id="projects-heading"
           eyebrow="03 — Featured Work"
           title="Projects I've shipped"
-          description="Six production applications — each live, each built end-to-end from database to deploy."
+          description="Seven shipped projects — six live on the web, plus a native iOS app, each built end-to-end."
         />
 
         <motion.div

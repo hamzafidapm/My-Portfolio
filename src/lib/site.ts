@@ -50,6 +50,12 @@ export type DemoAccess = {
   note: string;
 };
 
+/** A captured app screen shown in a card's screenshot strip. */
+export type Screenshot = {
+  src: string;
+  alt: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -59,6 +65,8 @@ export type Project = {
   live?: string;
   repo: string;
   demo?: DemoAccess;
+  /** Optional gallery — mainly for projects with no live URL to link out to. */
+  screenshots?: Screenshot[];
   accentFrom: string;
   accentTo: string;
 };
@@ -145,12 +153,30 @@ export const projects: Project[] = [
     accentFrom: 'from-stone-400/20',
     accentTo: 'to-gold-500/10',
   },
+  {
+    slug: 'civipass',
+    name: 'CiviPass',
+    summary:
+      'Native iOS civics test prep app for the U.S. citizenship test — Study mode with categorized questions, Quiz mode with instant feedback, progress tracking with streaks, and a StoreKit 2 premium tier. My first native iOS app, built entirely on Windows via VS Code and Claude Code, using GitHub Actions macOS runners as the only Xcode access point — including a CI screenshot pipeline for visual QA without ever opening Xcode.',
+    tech: ['SwiftUI', 'SwiftData', 'StoreKit 2', 'GitHub Actions CI/CD'],
+    repo: 'https://github.com/hamzafidapm/CiviPass',
+    screenshots: [
+      { src: '/images/civipass/01-today.webp', alt: 'CiviPass Today tab' },
+      { src: '/images/civipass/02-study.webp', alt: 'CiviPass Study mode listing categorized civics questions' },
+      { src: '/images/civipass/03-quiz-question.webp', alt: 'CiviPass mock quiz asking a civics question with four answers' },
+      { src: '/images/civipass/04-quiz-answered.webp', alt: 'CiviPass quiz showing a correct answer with an explanation' },
+      { src: '/images/civipass/05-progress.webp', alt: 'CiviPass progress tracking screen' },
+      { src: '/images/civipass/06-paywall.webp', alt: 'CiviPass premium upgrade screen' },
+    ],
+    accentFrom: 'from-indigo-400/20',
+    accentTo: 'to-gold-500/10',
+  },
 ];
 
 export type Stat = { value: number; suffix: string; label: string };
 
 export const stats: Stat[] = [
-  { value: 6, suffix: '+', label: 'Projects Shipped' },
+  { value: 7, suffix: '+', label: 'Projects Shipped' },
   { value: 12, suffix: '+', label: 'Technologies' },
   { value: 100, suffix: '%', label: 'AI-Assisted Workflow' },
 ];

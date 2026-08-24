@@ -1,10 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { ArrowUpRightIcon, CodeIcon, KeyIcon } from '@/components/Icons';
 import { fadeUp } from '@/lib/motion';
-import type { DemoAccess, Project } from '@/lib/site';
+import type { DemoAccess, Project, Screenshot } from '@/lib/site';
 
 type Props = {
   project: Project;
@@ -61,6 +62,10 @@ export default function ProjectCard({ project, index }: Props) {
             </li>
           ))}
         </ul>
+
+        {project.screenshots && (
+          <ScreenshotStrip shots={project.screenshots} project={project.name} />
+        )}
 
         {project.demo && <DemoCredentials demo={project.demo} project={project.name} />}
 
@@ -127,6 +132,40 @@ function DemoCredentials({ demo, project }: { demo: DemoAccess; project: string 
       <span className="sr-only">
         These are public demo credentials for {project}.
       </span>
+    </div>
+  );
+}
+
+/**
+ * Horizontally scrollable strip of app screens. Carries the visual weight for
+ * projects with no live URL, where a reader cannot click through to see the
+ * real thing. Images are lazy by default — this sits below the fold.
+ */
+function ScreenshotStrip({
+  shots,
+  project,
+}: {
+  shots: Screenshot[];
+  project: string;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label={`${project} screenshots`}
+      className="mask-fade-x -mx-1 mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2"
+    >
+      {shots.map((shot) => (
+        <figure key={shot.src} className="w-[6.5rem] shrink-0 snap-start sm:w-[7.25rem]">
+          <Image
+            src={shot.src}
+            alt={shot.alt}
+            width={640}
+            height={1391}
+            sizes="(max-width: 640px) 6.5rem, 7.25rem"
+            className="h-auto w-full rounded-xl border border-white/10 bg-ink-850"
+          />
+        </figure>
+      ))}
     </div>
   );
 }
